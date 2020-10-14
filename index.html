@@ -16,7 +16,12 @@
 			//	console.log('Longitude: ' + position.coords.longitude);
 			//}
 			
-			window.addEventListener("deviceorientation", handleOrientation, true);
+			if(window.DeviceOrientationEvent) {
+				document.getElementById("connection") = "TRUE";
+				window.addEventListener("deviceorientation", handleOrientation, true);
+			}else{
+				document.getElementById("connection") = "FALSE";
+			}
 			
 			function handleOrientation(event) {
 			  	var absolute = event.absolute;
@@ -38,7 +43,7 @@
 	</head>
 	
 	<body>
-		<h2 id="fake">0</h2>
+		<h2 id="connection">!!!!!</h2>
 		<h2 id="absolute">0</h2>
 		<h2 id="alpha">0</h2>
 		<h2 id="beta">0</h2>
