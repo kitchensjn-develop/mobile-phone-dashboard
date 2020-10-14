@@ -17,10 +17,10 @@
 			//}
 			
 			if(window.DeviceOrientationEvent) {
-				document.getElementById("connection") = "TRUE";
+				document.getElementById("connection").innerHTML = "TRUE";
 				window.addEventListener("deviceorientation", handleOrientation, true);
-			}else{
-				document.getElementById("connection") = "FALSE";
+			} else {
+				document.getElementById("connection").innerHTML = "FALSE";
 			}
 			
 			function handleOrientation(event) {
